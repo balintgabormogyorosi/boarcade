@@ -1,4 +1,4 @@
-import { useRouteError } from "react-router-dom"
+import { Link, useRouteError } from "react-router-dom"
 
 
 const ErrorPage = () => {
@@ -9,6 +9,8 @@ const ErrorPage = () => {
     return (
         <div className="error-page">
             <strong>{error.status}: {error.data.message}</strong>
+            <br />
+            <Link to="/">Go back to home page</Link>
         </div>
     )
 }
