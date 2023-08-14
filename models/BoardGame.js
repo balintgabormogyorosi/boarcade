@@ -43,12 +43,15 @@ const BoardGameSchema = new Schema({
     longDescription: {
         type: String,
     },
+    price: {
+        type: Number,
+    },
 }, { versionKey: false, timestamps: false, })
 
 BoardGameSchema.statics = {
-    createAndValidate: async function ({ name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, }) {
+    createAndValidate: async function ({ name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, price, }) {
         console.log(name.toLowerCase().replaceAll(' ', '-'))
-        return new this({ name, slug: name.toLowerCase().replaceAll(' ', '-'), thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, })
+        return new this({ name, slug: name.toLowerCase().replaceAll(' ', '-'), thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, price, })
     }
 }
 

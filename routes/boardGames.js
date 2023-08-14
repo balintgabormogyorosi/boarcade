@@ -27,9 +27,9 @@ router.get('/:slug', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, } = req.body
+        const { name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, price } = req.body
 
-        let boardGame = await BoardGame.createAndValidate({ name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, })
+        let boardGame = await BoardGame.createAndValidate({ name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, price })
         boardGame = await boardGame.save()
         res.json({ boardGame, })
     } catch (errors) {
