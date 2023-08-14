@@ -13,8 +13,8 @@ const router = createBrowserRouter([
         element: <RootLayout />,
         errorElement: <ErrorPage />,
         children: [
-            { index: true, element: <HomePage />, },
-            { path: 'tarsasjatekok', element: <BoardGamesPage />, loader: boardGamesLoader, },
+            { index: true, element: <BoardGamesPage />, loader: boardGamesLoader },
+            // { path: 'tarsasjatekok', element: <BoardGamesPage />, loader: boardGamesLoader, },
             { path: 'tarsasjatekok/:slug', element: <BoardGamePage />, loader: boardGameLoader },
         ],
     },
