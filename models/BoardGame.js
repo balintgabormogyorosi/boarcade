@@ -14,6 +14,10 @@ const BoardGameSchema = new Schema({
         unique: true,
         trim: true,
     },
+    thumbnail: {
+        type: String,
+        required: true,
+    },
     minPlayers: {
         type: Number,
         required: true,
@@ -42,9 +46,9 @@ const BoardGameSchema = new Schema({
 }, { versionKey: false, timestamps: false, })
 
 BoardGameSchema.statics = {
-    createAndValidate: async function ({ name, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, }) {
+    createAndValidate: async function ({ name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, }) {
         console.log(name.toLowerCase().replaceAll(' ', '-'))
-        return new this({ name, slug: name.toLowerCase().replaceAll(' ', '-'), minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, })
+        return new this({ name, slug: name.toLowerCase().replaceAll(' ', '-'), thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, })
     }
 }
 

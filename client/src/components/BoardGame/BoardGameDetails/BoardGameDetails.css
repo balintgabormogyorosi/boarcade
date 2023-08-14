@@ -1,0 +1,12 @@
+.board-game-details {
+    display: flex;
+    flex-direction: row;    
+}
+
+.board-game-details__images {
+    width: 15rem;
+    height: 15rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}

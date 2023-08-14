@@ -1,0 +1,47 @@
+.board-game-badge {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+}
+
+.board-game-badge__thumbnail {
+    width: 100%;
+    padding-top: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.board-game-badge__information {
+    padding: 0.75rem 0.25rem;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.board-game-badge__name {
+    /* margin-bottom: 1rem; */
+    cursor: pointer;
+    color: #393939;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 992px) {
+    .board-game-badge__name {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .board-game-badge__name {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .board-game-badge__information {
+        padding: 0.5rem 0.25rem;
+    }
+
+    .board-game-badge__name {
+        font-size: 0.8rem;
+    }
+}

@@ -15,9 +15,11 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:slug', async (req, res) => {
     try {
-
+        const { slug } = req.params
+        const boardGame = await BoardGame.findOne({ slug, })
+        res.json({ boardGame, })
     } catch (errors) {
         res.status(400).json({ errors, })
     }
@@ -25,10 +27,9 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { name, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, } = req.body
+        const { name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, } = req.body
 
-        let boardGame = await BoardGame.createAndValidate({ name, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, })
-        console.log(boardGame)
+        let boardGame = await BoardGame.createAndValidate({ name, thumbnail, minPlayers, maxPlayers, minTime, maxTime, tags, shortDescription, longDescription, })
         boardGame = await boardGame.save()
         res.json({ boardGame, })
     } catch (errors) {

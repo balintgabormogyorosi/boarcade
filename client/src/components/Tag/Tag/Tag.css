@@ -1,0 +1,13 @@
+.tag {
+    display: inline-block;
+    margin-right: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    background-color: #D0D0D0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.tag:last-child {
+    margin-right: 0;
+}
