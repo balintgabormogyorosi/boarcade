@@ -7,7 +7,7 @@ const router = Router()
 
 router.get('/', async (req, res) => {
     try {
-        const boardGames = await BoardGame.find()
+        const boardGames = await BoardGame.find().sort({ name: 'asc', })
         res.json({ boardGames, })
     } catch (errors) {
         res.status(400).json({ errors, })
